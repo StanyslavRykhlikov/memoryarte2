@@ -4,7 +4,7 @@ import React, {useState, useEffect, useCallback} from 'react'
 import Image from 'next/image'
 import {useSwipeable} from 'react-swipeable'
 import {Button} from '@/components/ui/button'
-import {ChevronLeft, ChevronRight} from 'lucide-react'
+import { ChevronLeft, ChevronRight } from 'lucide-react'
 import {GALLERY, getTotalPages, getImagesById} from '@/constants/gallery'
 import {motion, AnimatePresence} from 'framer-motion'
 import GalleryModal from './GalleryModal'
@@ -88,11 +88,12 @@ const Gallery: React.FC<GalleryProps> = ({imagesPerPage = 10, isMobile = false, 
                 onClick={handlePrevPage}
                 variant="outline"
                 size="icon"
+                className="dark:bg-gray-700 dark:text-white"
             >
                 <ChevronLeft className="h-4 w-4"/>
             </Button>
             {showPageInfo && (
-                <span>
+                <span className="dark:text-white">
                     Страница {currentPage} из {totalPages}
                 </span>
             )}
@@ -100,12 +101,14 @@ const Gallery: React.FC<GalleryProps> = ({imagesPerPage = 10, isMobile = false, 
                 onClick={handleNextPage}
                 variant="outline"
                 size="icon"
+                className="dark:bg-gray-700 dark:text-white"
             >
                 <ChevronRight className="h-4 w-4"/>
             </Button>
         </div>
     )
 
+    // noinspection JSUnusedGlobalSymbols
     const pageVariants = {
         enter: (direction: number) => ({
             x: direction > 0 ? '100%' : '-100%',

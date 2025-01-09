@@ -3,7 +3,7 @@ import {getLogoUrl} from "@/constants/logo";
 
 export default function Document() {
     return (
-        <Html lang="ru">
+        <Html lang="ru" className="dark">
             <Head>
                 <link
                     rel="icon"
@@ -12,7 +12,7 @@ export default function Document() {
                     href={getLogoUrl(32)}
                 />
             </Head>
-            <body className="antialiased">
+            <body className="antialiased bg-white dark:bg-gray-900">
             <Main/>
             <NextScript/>
             </body>

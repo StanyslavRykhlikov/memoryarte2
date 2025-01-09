@@ -1,18 +1,18 @@
 'use client'
 
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import Image from 'next/image'
-import {motion, AnimatePresence} from 'framer-motion'
-import {Button} from '@/components/ui/button'
-import {X, ChevronLeft, ChevronRight, ZoomIn, ZoomOut} from 'lucide-react'
-import {useSwipeable} from 'react-swipeable'
+import { motion, AnimatePresence } from 'framer-motion'
+import { Button } from '@/components/ui/button'
+import { X, ChevronLeft, ChevronRight, ZoomIn, ZoomOut } from 'lucide-react'
+import { useSwipeable } from 'react-swipeable'
 
 interface GalleryModalProps {
     images: string[]
     onClose: () => void
 }
 
-const GalleryModal: React.FC<GalleryModalProps> = ({images, onClose}) => {
+const GalleryModal: React.FC<GalleryModalProps> = ({ images, onClose }) => {
     const [currentIndex, setCurrentIndex] = useState(0)
     const [isZoomed, setIsZoomed] = useState(false)
     const [direction, setDirection] = useState(0)
@@ -38,6 +38,7 @@ const GalleryModal: React.FC<GalleryModalProps> = ({images, onClose}) => {
         preventScrollOnSwipe: true
     })
 
+    // noinspection JSUnusedGlobalSymbols
     const pageVariants = {
         enter: (direction: number) => ({
             x: direction > 0 ? '100%' : '-100%',
@@ -61,10 +62,10 @@ const GalleryModal: React.FC<GalleryModalProps> = ({images, onClose}) => {
 
     return (
         <motion.div
-            initial={{opacity: 0}}
-            animate={{opacity: 1}}
-            exit={{opacity: 0}}
-            className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black bg-opacity-75 dark:bg-opacity-90 flex items-center justify-center z-50"
             onClick={onClose}
         >
             <div className="relative w-full h-full max-w-4xl max-h-full" onClick={(e) => e.stopPropagation()}>
@@ -74,7 +75,7 @@ const GalleryModal: React.FC<GalleryModalProps> = ({images, onClose}) => {
                     variant="ghost"
                     onClick={onClose}
                 >
-                    <X className="h-6 w-6"/>
+                    <X className="h-6 w-6 text-white" />
                 </Button>
                 <div className="h-full flex items-center justify-center" {...handlers}>
                     <AnimatePresence initial={false} custom={direction} mode="wait">
@@ -99,14 +100,14 @@ const GalleryModal: React.FC<GalleryModalProps> = ({images, onClose}) => {
                     </AnimatePresence>
                 </div>
                 <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-4">
-                    <Button size="icon" variant="outline" onClick={handlePrev}>
-                        <ChevronLeft className="h-4 w-4"/>
+                    <Button size="icon" variant="outline" onClick={handlePrev} className="bg-white dark:bg-gray-800 text-gray-900 dark:text-white">
+                        <ChevronLeft className="h-4 w-4" />
                     </Button>
-                    <Button size="icon" variant="outline" onClick={toggleZoom}>
-                        {isZoomed ? <ZoomOut className="h-4 w-4"/> : <ZoomIn className="h-4 w-4"/>}
+                    <Button size="icon" variant="outline" onClick={toggleZoom} className="bg-white dark:bg-gray-800 text-gray-900 dark:text-white">
+                        {isZoomed ? <ZoomOut className="h-4 w-4" /> : <ZoomIn className="h-4 w-4" />}
                     </Button>
-                    <Button size="icon" variant="outline" onClick={handleNext}>
-                        <ChevronRight className="h-4 w-4"/>
+                    <Button size="icon" variant="outline" onClick={handleNext} className="bg-white dark:bg-gray-800 text-gray-900 dark:text-white">
+                        <ChevronRight className="h-4 w-4" />
                     </Button>
                 </div>
             </div>
