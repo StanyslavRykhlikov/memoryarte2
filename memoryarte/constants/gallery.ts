@@ -65,8 +65,8 @@ export const getTotalPages = (itemsPerPage: number): number =>
 export const getPageImages = (page: number, itemsPerPage: number, size: Size): string[] => {
     const start = (page - 1) * itemsPerPage;
     const end = start + itemsPerPage;
-    return GALLERY.slice(start, end).flatMap(item =>
-        item.m.map(name => getImagePath(name, size))
+    return GALLERY.slice(start, end).map(item =>
+        getImagePath(item.m[0], size)
     );
 };
 
@@ -74,9 +74,9 @@ export const getPageImages = (page: number, itemsPerPage: number, size: Size): s
 export const getGalleryItemById = (id: number): GalleryItem | undefined =>
     GALLERY.find(item => item.i === id);
 
-
 // Получить список готовых ссылок изображений определенного размера по id
 export const getImagesById = (id: number, size: Size): string[] | undefined => {
     const item = getGalleryItemById(id);
     return item?.m.map(name => getImagePath(name, size));
 };
+
