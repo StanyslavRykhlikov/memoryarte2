@@ -6,6 +6,7 @@ import Header from '@/components/Header'
 import GravestonePricing from '@/components/GravestonePricing'
 import FeatureItem from '@/components/FeatureItem';
 import {WHY_CHOOSE_US, HOW_WE_WORK} from '@/constants/mainImages';
+import Footer from '@/components/Footer'
 
 export default function Home() {
     const [isMobile, setIsMobile] = useState(false)
@@ -72,6 +73,7 @@ export default function Home() {
                     </p>
                     <GravestonePricing/>
                 </div>
+                <Footer/>
             </div>
         </div>
 

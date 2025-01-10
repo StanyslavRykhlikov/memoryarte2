@@ -8,6 +8,8 @@ import {ChevronLeft, ChevronRight} from 'lucide-react'
 import {GALLERY, getTotalPages, getImagesById} from '@/constants/gallery'
 import {motion, AnimatePresence} from 'framer-motion'
 import GalleryModal from './GalleryModal'
+import {GALLERY_PATH} from '@/constants/paths'
+import {BASE_PATH} from "@/constants/paths";
 
 interface GalleryProps {
     imagesPerPage?: number
@@ -15,10 +17,8 @@ interface GalleryProps {
     showPageInfo?: boolean
 }
 
-const BASE_PATH = '/images/gallery/';
-
 const getImagePath = (name: string, size: '256' | '512'): string =>
-    `${BASE_PATH}${name}_${size}.webp`;
+    `${GALLERY_PATH}${name}_${size}.webp`;
 
 const Gallery: React.FC<GalleryProps> = ({imagesPerPage = 10, isMobile = false, showPageInfo = false}) => {
     const [currentPage, setCurrentPage] = useState(1)
@@ -56,8 +56,8 @@ const Gallery: React.FC<GalleryProps> = ({imagesPerPage = 10, isMobile = false, 
     })
 
     const handleImageClick = (id: number) => {
-        const fullSizeImages = getImagesById(id, '1024');
-        if (fullSizeImages) {
+        const fullSizeImages = getImagesById(id, '1024')?.map(img => img.split('/').pop()?.replace(/^\//, '') || '');
+        if (fullSizeImages && fullSizeImages.length > 0) {
             setModalImages(fullSizeImages);
         }
     }
@@ -164,8 +164,12 @@ const Gallery: React.FC<GalleryProps> = ({imagesPerPage = 10, isMobile = false, 
                 </AnimatePresence>
             </div>
             <PaginationButtons/>
-            {modalImages && (
-                <GalleryModal images={modalImages} onClose={closeModal}/>
+            {modalImages && modalImages.length > 0 && (
+                <GalleryModal
+                    images={modalImages}
+                    onClose={closeModal}
+                    baseUrl={GALLERY_PATH.replace(`${BASE_PATH}`, '')}
+                />
             )}
         </div>
     )

@@ -1,9 +1,8 @@
+import {LOGO_PATH} from './paths';
+
 // Определение допустимых размеров логотипа
 const LOGO_SIZES = [32, 64, 128, 256, 512] as const;
 type LogoSize = typeof LOGO_SIZES[number];
-
-// Базовый путь к логотипам
-const BASE_LOGO_PATH = '/images/logo/';
 
 // Функция для получения URL логотипа нужного размера
 export function getLogoUrl(size: LogoSize): string {
@@ -13,7 +12,7 @@ export function getLogoUrl(size: LogoSize): string {
         size = 512;
     }
 
-    return `${BASE_LOGO_PATH}logo_${size}.webp`;
+    return `${LOGO_PATH}logo_${size}.webp`;
 }
 
 // Экспорт констант для удобства использования

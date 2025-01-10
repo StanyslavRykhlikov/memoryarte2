@@ -1,13 +1,13 @@
-const BASE_PATH = '/images/main/';
+import {MAIN_IMAGES_PATH} from './paths';
 
 export const MAIN_IMAGES = {
-    CONFIRM: `${BASE_PATH}confirm.webp`,
-    DELIVERY: `${BASE_PATH}delivery.webp`,
-    DESIGN: `${BASE_PATH}design.webp`,
-    PHOTO: `${BASE_PATH}photo.webp`,
-    PRODUCTION: `${BASE_PATH}production.webp`,
-    SPEED: `${BASE_PATH}speed.webp`,
-    WATER_AND_SUN: `${BASE_PATH}water_and_sun.webp`,
+    CONFIRM: `${MAIN_IMAGES_PATH}confirm.webp`,
+    DELIVERY: `${MAIN_IMAGES_PATH}delivery.webp`,
+    DESIGN: `${MAIN_IMAGES_PATH}design.webp`,
+    PHOTO: `${MAIN_IMAGES_PATH}photo.webp`,
+    PRODUCTION: `${MAIN_IMAGES_PATH}production.webp`,
+    SPEED: `${MAIN_IMAGES_PATH}speed.webp`,
+    WATER_AND_SUN: `${MAIN_IMAGES_PATH}water_and_sun.webp`,
 };
 
 export interface FeatureItem {

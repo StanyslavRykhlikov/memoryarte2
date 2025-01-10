@@ -6,16 +6,29 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import { X, ChevronLeft, ChevronRight, ZoomIn, ZoomOut } from 'lucide-react'
 import { useSwipeable } from 'react-swipeable'
+import { FaWhatsapp } from 'react-icons/fa'
+import { BASE_PATH, GALLERY_PATH } from '@/constants/paths'
+
+const generateWhatsAppLink = (imageUrl: string) => {
+    const fullImageUrl = `${BASE_PATH}/${GALLERY_PATH}${imageUrl}`;
+    const message = encodeURIComponent(`Здравствуйте! Я хотел бы заказать дизайн надгробия, похожий на этот: ${fullImageUrl}`);
+    return `https://wa.me/593989352037?text=${message}`;
+};
 
 interface GalleryModalProps {
     images: string[]
     onClose: () => void
+    baseUrl: string
 }
 
-const GalleryModal: React.FC<GalleryModalProps> = ({ images, onClose }) => {
+const GalleryModal: React.FC<GalleryModalProps> = ({ images, onClose, baseUrl }) => {
     const [currentIndex, setCurrentIndex] = useState(0)
     const [isZoomed, setIsZoomed] = useState(false)
     const [direction, setDirection] = useState(0)
+
+    if (!images || images.length === 0) {
+        return null;
+    }
 
     const handlePrev = () => {
         setDirection(-1)
@@ -38,7 +51,6 @@ const GalleryModal: React.FC<GalleryModalProps> = ({ images, onClose }) => {
         preventScrollOnSwipe: true
     })
 
-    // noinspection JSUnusedGlobalSymbols
     const pageVariants = {
         enter: (direction: number) => ({
             x: direction > 0 ? '100%' : '-100%',
@@ -90,7 +102,7 @@ const GalleryModal: React.FC<GalleryModalProps> = ({ images, onClose }) => {
                             className="relative w-full h-full flex items-center justify-center"
                         >
                             <Image
-                                src={images[currentIndex]}
+                                src={`${BASE_PATH}${baseUrl}${images[currentIndex]}`}
                                 alt={`Gallery image ${currentIndex + 1}`}
                                 fill
                                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -111,6 +123,19 @@ const GalleryModal: React.FC<GalleryModalProps> = ({ images, onClose }) => {
                     </Button>
                 </div>
             </div>
+            <a
+                href={generateWhatsAppLink(images[currentIndex])}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="absolute bottom-20 left-1/2 transform -translate-x-1/2 z-10"
+            >
+                <Button
+                    className="bg-green-500 hover:bg-green-600 text-white flex items-center space-x-2 px-4 py-2 rounded-full shadow-lg"
+                >
+                    <FaWhatsapp className="h-5 w-5" />
+                    <span>Хочу похожий дизайн</span>
+                </Button>
+            </a>
         </motion.div>
     )
 }

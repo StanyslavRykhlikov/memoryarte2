@@ -1,5 +1,6 @@
+import {GALLERY_PATH} from '@/constants/paths';
+
 // Константы
-const BASE_PATH = '/images/gallery/';
 const SIZES = ['256', '512', '1024'] as const;
 type Size = typeof SIZES[number];
 
@@ -16,7 +17,7 @@ export const GALLERY: GalleryItem[] = [
     {i: 4, m: ['0004_01', '0004_02', '0004_03', '0004_04']},
     {
         i: 5,
-        m: ['0005_01', '0005_02', '0005_03', '0005_04', '0005_05', '0005_06', '0005_07', '0005_08',
+        m: ['0005_01', '0005_02', '0004_05', '0005_04', '0005_05', '0005_06', '0005_07', '0005_08',
             '0005_09', '0005_10', '0005_11']
     },
     {i: 6, m: ['0006_01', '0006_02']},
@@ -55,7 +56,7 @@ export const GALLERY: GalleryItem[] = [
 
 // Функция для генерации полного пути к изображению
 const getImagePath = (name: string, size: Size): string =>
-    `${BASE_PATH}${name}_${size}.webp`;
+    `${GALLERY_PATH}${name}_${size}.webp`;
 
 // Получить количество страниц
 export const getTotalPages = (itemsPerPage: number): number =>
