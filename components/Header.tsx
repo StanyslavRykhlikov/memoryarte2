@@ -10,7 +10,7 @@ const Header: React.FC = () => {
 
     useEffect(() => {
         const checkIfMobile = () => {
-            setIsMobile(window.innerWidth <= 768)
+             setIsMobile(window.innerHeight > window.innerWidth)
         }
 
         checkIfMobile()

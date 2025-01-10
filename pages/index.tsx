@@ -13,7 +13,7 @@ export default function Home() {
 
     useEffect(() => {
         const checkIfMobile = () => {
-            setIsMobile(window.innerWidth <= 768)
+             setIsMobile(window.innerHeight > window.innerWidth)
         }
 
         checkIfMobile()
