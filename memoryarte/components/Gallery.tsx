@@ -4,7 +4,7 @@ import React, {useState, useEffect, useCallback} from 'react'
 import Image from 'next/image'
 import {useSwipeable} from 'react-swipeable'
 import {Button} from '@/components/ui/button'
-import { ChevronLeft, ChevronRight } from 'lucide-react'
+import {ChevronLeft, ChevronRight} from 'lucide-react'
 import {GALLERY, getTotalPages, getImagesById} from '@/constants/gallery'
 import {motion, AnimatePresence} from 'framer-motion'
 import GalleryModal from './GalleryModal'
@@ -83,7 +83,7 @@ const Gallery: React.FC<GalleryProps> = ({imagesPerPage = 10, isMobile = false, 
     }, [handlePrevPage, handleNextPage]);
 
     const PaginationButtons = () => (
-        <div className="flex justify-between items-center my-4">
+        <div className="flex justify-between items-center my-2">
             <Button
                 onClick={handlePrevPage}
                 variant="outline"
@@ -108,7 +108,6 @@ const Gallery: React.FC<GalleryProps> = ({imagesPerPage = 10, isMobile = false, 
         </div>
     )
 
-    // noinspection JSUnusedGlobalSymbols
     const pageVariants = {
         enter: (direction: number) => ({
             x: direction > 0 ? '100%' : '-100%',
@@ -133,7 +132,7 @@ const Gallery: React.FC<GalleryProps> = ({imagesPerPage = 10, isMobile = false, 
     return (
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <PaginationButtons/>
-            <div className="my-8 overflow-hidden relative" {...handlers}>
+            <div className="my-4 overflow-hidden relative" {...handlers}>
                 <AnimatePresence initial={false} custom={direction} mode="wait">
                     <motion.div
                         key={currentPage}
