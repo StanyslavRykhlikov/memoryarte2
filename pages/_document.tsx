@@ -16,7 +16,7 @@ class MyDocument extends Document {
                     />
                     <meta name="description"
                           content="Lápidas de porcelanato con grabado láser en Ecuador. Diseños personalizados, duraderos y de alta calidad para honrar la memoria de sus seres queridos."/>
-                    <meta name="keywords" content="lápidas, porcelanato, grabado láser, Ecuador, MemoryArte"/>
+                    <meta name="keywords" content="lápidas de porcelanato, grabado láser en porcelanato, lápidas personalizadas Ecuador, placas conmemorativas de porcelanato, fabricación de lápidas en Ecuador, lápidas duraderas para exteriores, placas funerarias de porcelanato, lápidas económicas en Ecuador, diseño de lápidas personalizadas, lápidas resistentes al clima, lápidas modernas de porcelanato, lápidas con grabado detallado, placas de porcelanato para tumbas, lápidas de alta calidad en Ecuador, lápidas con envío a nivel nacional"/>
                     <meta property="og:title"
                           content="Lápidas de porcelanato con grabado láser en Ecuador | MemoryArte"/>
                     <meta property="og:description"
