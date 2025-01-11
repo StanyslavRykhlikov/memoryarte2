@@ -22,9 +22,9 @@ const getImagePath = (name: string, size: '256' | '512'): string =>
 
 const Gallery: React.FC<GalleryProps> = ({imagesPerPage = 10, isMobile = false, showPageInfo = false}) => {
     const [currentPage, setCurrentPage] = useState(1)
-    const [images, setImages] = useState<Array<{ src: string; id: number }>>([])
+    const [images, setImages] = useState<Array<{ src: string; id: number; alt: string }>>([])
     const [direction, setDirection] = useState(0)
-    const [modalImages, setModalImages] = useState<string[] | null>(null)
+    const [modalImages, setModalImages] = useState<{ images: string[], alts: string[] } | null>(null)
     const totalPages = getTotalPages(imagesPerPage)
 
     useEffect(() => {
@@ -33,7 +33,8 @@ const Gallery: React.FC<GalleryProps> = ({imagesPerPage = 10, isMobile = false, 
         setImages(
             GALLERY.slice(start, end).map(item => ({
                 src: getImagePath(item.m[0], isMobile ? '256' : '512'),
-                id: item.i
+                id: item.i,
+                alt: item.t
             }))
         );
     }, [currentPage, imagesPerPage, isMobile])
@@ -56,9 +57,10 @@ const Gallery: React.FC<GalleryProps> = ({imagesPerPage = 10, isMobile = false, 
     })
 
     const handleImageClick = (id: number) => {
-        const fullSizeImages = getImagesById(id, '1024')?.map(img => img.split('/').pop()?.replace(/^\//, '') || '');
-        if (fullSizeImages && fullSizeImages.length > 0) {
-            setModalImages(fullSizeImages);
+        const item = GALLERY.find(item => item.i === id);
+        if (item) {
+            const fullSizeImages = item.m.map(img => `${img}_1024.webp`);
+            setModalImages({images: fullSizeImages, alts: Array(fullSizeImages.length).fill(item.t)});
         }
     }
 
@@ -144,7 +146,7 @@ const Gallery: React.FC<GalleryProps> = ({imagesPerPage = 10, isMobile = false, 
                         transition={pageTransition}
                         className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
                     >
-                        {images.map(({src, id}, index) => (
+                        {images.map(({src, id, alt}, index) => (
                             <div
                                 key={id}
                                 className="relative aspect-square overflow-hidden rounded-lg cursor-pointer"
@@ -152,7 +154,7 @@ const Gallery: React.FC<GalleryProps> = ({imagesPerPage = 10, isMobile = false, 
                             >
                                 <Image
                                     src={src}
-                                    alt={`Gallery image ${id}`}
+                                    alt={alt}
                                     fill
                                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                                     className="object-cover"
@@ -164,9 +166,10 @@ const Gallery: React.FC<GalleryProps> = ({imagesPerPage = 10, isMobile = false, 
                 </AnimatePresence>
             </div>
             <PaginationButtons/>
-            {modalImages && modalImages.length > 0 && (
+            {modalImages && modalImages.images.length > 0 && (
                 <GalleryModal
-                    images={modalImages}
+                    images={modalImages.images}
+                    alts={modalImages.alts}
                     onClose={closeModal}
                     baseUrl={GALLERY_PATH.replace(`${BASE_PATH}`, '')}
                 />

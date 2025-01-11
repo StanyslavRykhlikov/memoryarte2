@@ -17,11 +17,12 @@ const generateWhatsAppLink = (imageUrl: string) => {
 
 interface GalleryModalProps {
     images: string[]
+    alts: string[]
     onClose: () => void
     baseUrl: string
 }
 
-const GalleryModal: React.FC<GalleryModalProps> = ({images, onClose, baseUrl}) => {
+const GalleryModal: React.FC<GalleryModalProps> = ({images, alts, onClose, baseUrl}) => {
     const [currentIndex, setCurrentIndex] = useState(0)
     const [isZoomed, setIsZoomed] = useState(false)
     const [direction, setDirection] = useState(0)
@@ -104,7 +105,7 @@ const GalleryModal: React.FC<GalleryModalProps> = ({images, onClose, baseUrl}) =
                         >
                             <Image
                                 src={`${BASE_PATH}${baseUrl}${images[currentIndex]}`}
-                                alt={`Gallery image ${currentIndex + 1}`}
+                                alt={alts[currentIndex]}
                                 fill
                                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                                 className={`object-contain transition-transform duration-300 ${isZoomed ? 'scale-150' : 'scale-100'}`}
