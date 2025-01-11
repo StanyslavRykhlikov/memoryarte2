@@ -96,7 +96,7 @@ const Gallery: React.FC<GalleryProps> = ({imagesPerPage = 10, isMobile = false, 
             </Button>
             {showPageInfo && (
                 <span className="dark:text-white">
-                    Страница {currentPage} из {totalPages}
+                    Página {currentPage} de {totalPages}
                 </span>
             )}
             <Button
