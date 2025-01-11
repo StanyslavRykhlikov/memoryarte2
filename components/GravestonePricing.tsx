@@ -58,7 +58,7 @@ const GravestonePricing: React.FC = () => {
                         />
                     </div>
                     <Button onClick={handleCalculate} className="w-full">
-                        Calcular el costoы
+                        Calcular el costo
                     </Button>
                     {price !== null && (
                         <div className="text-center text-lg font-semibold">

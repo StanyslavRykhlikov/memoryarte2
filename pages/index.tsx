@@ -7,6 +7,7 @@ import GravestonePricing from '@/components/GravestonePricing'
 import FeatureItem from '@/components/FeatureItem';
 import {WHY_CHOOSE_US, HOW_WE_WORK} from '@/constants/mainImages';
 import Footer from '@/components/Footer'
+import FAQ from '@/components/FAQ'
 
 export default function Home() {
     const [isMobile, setIsMobile] = useState(false)
@@ -77,6 +78,9 @@ export default function Home() {
                         Consulte el precio de la lápida proporcionando las dimensiones. La asesoría es gratuita.
                     </p>
                     <GravestonePricing/>
+                </div>
+                <div className="mb-12">
+                    <FAQ />
                 </div>
                 <Footer/>
             </div>
