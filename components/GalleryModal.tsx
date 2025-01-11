@@ -11,7 +11,7 @@ import {BASE_PATH, GALLERY_PATH} from '@/constants/paths'
 
 const generateWhatsAppLink = (imageUrl: string) => {
     const fullImageUrl = `${BASE_PATH}/${GALLERY_PATH}${imageUrl}`;
-    const message = encodeURIComponent(`Здравствуйте! Я хотел бы заказать дизайн надгробия, похожий на этот: ${fullImageUrl}`);
+    const message = encodeURIComponent(`¡Hola! Me gustaría encargar un diseño de lápida similar a este: ${fullImageUrl}`);
     return `https://wa.me/593989352037?text=${message}`;
 };
 
@@ -137,7 +137,7 @@ const GalleryModal: React.FC<GalleryModalProps> = ({images, onClose, baseUrl}) =
                     className="bg-green-500 hover:bg-green-600 text-white flex items-center space-x-2 px-4 py-2 rounded-full shadow-lg"
                 >
                     <FaWhatsapp className="h-5 w-5"/>
-                    <span>Хочу похожий дизайн</span>
+                    <span>Quiero un diseño similar</span>
                 </Button>
             </a>
         </motion.div>

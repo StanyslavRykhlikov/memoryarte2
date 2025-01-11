@@ -19,41 +19,41 @@ export interface FeatureItem {
 export const WHY_CHOOSE_US: FeatureItem[] = [
     {
         image: MAIN_IMAGES.WATER_AND_SUN,
-        title: "Высокое качество",
-        description: "Используем долговечный порселанато, устойчивый к климату Эквадора.",
+        title: "Alta calidad",
+        description: "Trabajamos con porcelanato resistente al clima de Ecuador.",
     },
     {
         image: MAIN_IMAGES.DESIGN,
-        title: "Индивидуальный дизайн",
-        description: "Полная персонализация: от фотографии до текстов и символов.",
+        title: "Diseño personalizado",
+        description: "Personalización total: desde fotografías hasta textos y símbolos.",
     },
     {
         image: MAIN_IMAGES.SPEED,
-        title: "Скорость изготовления",
-        description: "Полный цикл – от дизайна до готовой плиты – занимает всего неделю.",
+        title: "Rapidez en la fabricación",
+        description: "El proceso completo, desde el diseño hasta la entrega, toma solo una semana.",
     },
 ];
 
 export const HOW_WE_WORK: FeatureItem[] = [
     {
         image: MAIN_IMAGES.PHOTO,
-        title: "1. Выбор фото",
-        description: "Отправьте нам фотографию и пожелания по дизайну.",
+        title: "1. Selección de la foto",
+        description: "Envíenos una fotografía junto con sus ideas para el diseño.",
     },
     {
         image: MAIN_IMAGES.CONFIRM,
-        title: "2. Утверждение дизайна",
-        description: "Мы разработаем макет и согласуем его с Вами.",
+        title: "2. Aprobación del diseño",
+        description: "Le presentamos un diseño preliminar para su aprobación.",
     },
     {
         image: MAIN_IMAGES.PRODUCTION,
-        title: "3. Изготовление",
-        description: "Начинаем производство после утверждения и предоплаты.",
+        title: "3. Fabricación",
+        description: "Iniciamos la producción una vez aprobado el diseño y realizada la precompra.",
     },
     {
         image: MAIN_IMAGES.DELIVERY,
-        title: "4. Доставка",
-        description: "Отправляем готовую плиту по всей территории Эквадора.",
+        title: "4. Entrega",
+        description: "Enviamos la lápida terminada a cualquier parte del Ecuador.",
     },
 ];
 

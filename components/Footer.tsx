@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
             <div className="container mx-auto px-4">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div>
-                        <h3 className="text-lg font-semibold mb-4 text-gray-900 dark:text-white">Контакты</h3>
+                        <h3 className="text-lg font-semibold mb-4 text-gray-900 dark:text-white">Contactos</h3>
                         <ul className="space-y-2">
                             <li>
                                 <Link href="https://www.facebook.com/memoriarte.ecuador" className="flex items-center text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">
@@ -34,7 +34,7 @@ const Footer: React.FC = () => {
                         </ul>
                     </div>
                     <div>
-                        <h3 className="text-lg font-semibold mb-4 text-gray-900 dark:text-white">Местоположение</h3>
+                        <h3 className="text-lg font-semibold mb-4 text-gray-900 dark:text-white">Ubicación</h3>
                         <p className="text-gray-600 dark:text-gray-300 mb-2">Cuenca, Ecuador</p>
                         <Link
                             href="https://maps.app.goo.gl/wBKeKBeJpdDkrErD7"
@@ -42,11 +42,13 @@ const Footer: React.FC = () => {
                             rel="noopener noreferrer"
                             className="flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300"
                         >
-                            <MdLocationOn className="mr-2" /> Открыть в Google Maps
+                            <MdLocationOn className="mr-2" /> Abrir en Google Maps
                         </Link>
                     </div>
                     <div>
-                        <h3 className="text-lg font-semibold mb-4 text-gray-900 dark:text-white">Банковские реквизиты</h3>
+                        <h3 className="text-lg font-semibold mb-4 text-gray-900 dark:text-white">
+                            Datos bancarios
+                        </h3>
                         <p className="text-gray-600 dark:text-gray-300">
                             Banco Guayaquil<br />
                             Corriente # 0046077482<br />
@@ -55,13 +57,13 @@ const Footer: React.FC = () => {
                             CI:1354150227
                         </p>
                         <p className="mt-4 text-sm text-gray-500 dark:text-gray-400">
-                            Внимание: Мы принимаем платежи только на указанные выше реквизиты.
-                            Остерегайтесь мошенников, использующих другие банковские данные.
+                            Atención: Aceptamos pagos únicamente a los datos bancarios indicados anteriormente.
+                            Tenga cuidado con estafadores que utilicen otra información bancaria.
                         </p>
                     </div>
                 </div>
                 <div className="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700 text-center text-gray-500 dark:text-gray-400">
-                    <p>&copy; {new Date().getFullYear()} MemoriArte. Все права защищены.</p>
+                    <p>&copy; {new Date().getFullYear()} MemoriArte. Todos los derechos reservados.</p>
                 </div>
             </div>
         </footer>

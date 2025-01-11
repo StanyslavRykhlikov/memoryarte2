@@ -29,13 +29,13 @@ const GravestonePricing: React.FC = () => {
     return (
         <Card className="w-full max-w-md mx-auto">
             <CardHeader>
-                <CardTitle>Калькулятор стоимости надгробия</CardTitle>
+                <CardTitle>Calculadora de costo de lápidas</CardTitle>
             </CardHeader>
             <CardContent>
                 <div className="space-y-4">
                     <div>
                         <label htmlFor="width" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
-                            Ширина (см)
+                            Ancho (cm)
                         </label>
                         <Input
                             id="width"
@@ -47,7 +47,7 @@ const GravestonePricing: React.FC = () => {
                     </div>
                     <div>
                         <label htmlFor="height" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
-                            Высота (см)
+                            Alto (cm)
                         </label>
                         <Input
                             id="height"
@@ -58,11 +58,11 @@ const GravestonePricing: React.FC = () => {
                         />
                     </div>
                     <Button onClick={handleCalculate} className="w-full">
-                        Рассчитать стоимость
+                        Calcular el costoы
                     </Button>
                     {price !== null && (
                         <div className="text-center text-lg font-semibold">
-                            Стоимость: ${price}
+                            Costo: ${price}
                         </div>
                     )}
                     {isInvalid && (
