@@ -1,12 +1,12 @@
 'use client'
 
-import React, { useState } from 'react'
-import { Input } from '@/components/ui/input'
-import { Button } from '@/components/ui/button'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
-import { AlertCircle } from 'lucide-react'
-import { calculateEngravingPrice, isValidDimensions } from '@/utils/pricing'
+import React, {useState} from 'react'
+import {Input} from '@/components/ui/input'
+import {Button} from '@/components/ui/button'
+import {Card, CardContent, CardHeader, CardTitle} from '@/components/ui/card'
+import {Alert, AlertDescription, AlertTitle} from '@/components/ui/alert'
+import {AlertCircle} from 'lucide-react'
+import {calculateEngravingPrice, isValidDimensions} from '@/utils/pricing'
 
 const GravestonePricing: React.FC = () => {
     const [width, setWidth] = useState<number>(60)
@@ -67,11 +67,11 @@ const GravestonePricing: React.FC = () => {
                     )}
                     {isInvalid && (
                         <Alert variant="destructive">
-                            <AlertCircle className="h-4 w-4" />
-                            <AlertTitle>Ошибка</AlertTitle>
+                            <AlertCircle className="h-4 w-4"/>
+                            <AlertTitle>Error:</AlertTitle>
                             <AlertDescription>
-                                Изготовление надгробия с такими размерами в настоящее время невозможно.
-                                Максимальные размеры: 60см x 120см или 120см x 60см.
+                                La fabricación de una lápida con esas dimensiones no es posible actualmente.
+                                Las dimensiones máximas permitidas son: 60 cm x 120 cm o 120 cm x 60 cm.
                             </AlertDescription>
                         </Alert>
                     )}
