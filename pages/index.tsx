@@ -9,13 +9,14 @@ import {WHY_CHOOSE_US, HOW_WE_WORK} from '@/constants/mainImages';
 import Footer from '@/components/Footer'
 import FAQ from '@/components/FAQ'
 import Head from 'next/head'
+import VideoHeader from '@/components/VideoHeader'
 
 export default function Home() {
     const [isMobile, setIsMobile] = useState(false)
 
     useEffect(() => {
         const checkIfMobile = () => {
-             setIsMobile(window.innerHeight > window.innerWidth)
+            setIsMobile(window.innerHeight > window.innerWidth)
         }
 
         checkIfMobile()
@@ -32,13 +33,15 @@ export default function Home() {
                 <title>Lápidas de porcelanato con grabado láser en Ecuador | MemoryArte</title>
             </Head>
             <Header/>
-            <div className="container mx-auto px-4 py-8" style={{marginTop: isMobile ? '32px' : '64px'}}>
+            <VideoHeader/>
+            <div className="container mx-auto px-4 py-8">
                 <h1 className="text-3xl font-bold mb-6 text-center text-white">
                     Fabricación de lápidas
                 </h1>
                 <p className="text-lg text-center text-gray-300 mb-8">
                     Lápidas de porcelanato: duraderas, estéticas y accesibles.
-                    Alta precisión en el grabado y un enfoque personalizado para honrar la memoria de sus seres queridos.
+                    Alta precisión en el grabado y un enfoque personalizado para honrar la memoria de sus seres
+                    queridos.
                 </p>
 
                 <div className="mb-12">
@@ -84,7 +87,7 @@ export default function Home() {
                     <GravestonePricing/>
                 </div>
                 <div className="mb-12">
-                    <FAQ />
+                    <FAQ/>
                 </div>
                 <Footer/>
             </div>
