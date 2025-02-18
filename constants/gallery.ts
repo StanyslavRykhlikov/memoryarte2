@@ -54,6 +54,18 @@ export const GALLERY: GalleryItem[] = [
     {i: 46, m: ['0046_01', '0046_02', '0046_03', '0046_04', '0046_05', '0046_06'], t: 'Lápida grabada con texto religioso'},
     {i: 48, m: ['0048_01', '0048_02', '0048_03', '0048_04'], t: 'Proceso de grabado láser en porcelanato'},
     {i: 49, m: ['0049_01', '0049_02', '0049_03', '0049_04'], t: 'Lápida con imagen de santo personalizado'},
+    {i: 50, m: ['0050_01', '0050_02', '0050_03', '0050_04'], t: 'Placa de porcelanato blanco con texto negro'},
+    {i: 51, m: ['0051_01', '0051_02', '0051_03', '0051_04'], t: 'Lápida de 60x60 cm con grabado personalizado'},
+    {i: 52, m: ['0052_01', '0052_02', '0052_03', '0052_04'], t: 'Detalle de grabado láser en placa conmemorativa'},
+    {i: 53, m: ['0053_01', '0053_02', '0053_03', '0053_04'], t: 'Placa funeraria personalizada con diseño único'},
+    {i: 54, m: ['0054_01', '0054_02', '0054_03', '0054_04'], t: 'Placa conmemorativa de porcelanato para cementerio'},
+    {i: 59, m: ['0059_01', '0059_02', '0059_03', '0059_04'], t: 'Lápida con diseño moderno y personalizado'},
+    {i: 60, m: ['0060_01', '0060_02', '0060_03', '0060_04'], t: 'Proceso de fabricación de lápida en porcelanato'},
+    {i: 61, m: ['0061_01', '0061_02', '0061_03', '0061_04'], t: 'Placa conmemorativa con bordes personalizados'},
+    {i: 64, m: ['0064_01', '0064_02', '0064_03', '0064_04'], t: 'Grabado láser en lápida de porcelanato negro'},
+    {i: 66, m: ['0066_01', '0066_02', '0066_03', '0066_04'], t: 'Placa funeraria con detalles finos grabados'},
+    {i: 68, m: ['0068_01', '0068_02', '0068_03', '0068_04'], t: 'Lápida personalizada con fondo paisajístico'},
+    {i: 71, m: ['0071_01', '0071_02', '0071_03', '0071_04'], t: 'Ejemplo de placa conmemorativa de alta calidad'},
 ];
 
 // Функция для генерации полного пути к изображению
